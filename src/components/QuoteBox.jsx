@@ -4,7 +4,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ title, name, firts, direction, phone, email, img }) => {
+const QuoteBox = ({ title, name, firts, direction, phone, email, img }) => {
   return (
     <div>
       <div className="contenidoArticle">
@@ -33,4 +33,4 @@ const Card = ({ title, name, firts, direction, phone, email, img }) => {
   );
 };
 
-export default Card;
+export default QuoteBox;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import users from "./quotes.json";
-import Card from "./components/Card";
+import QuoteBox from "./components/QuoteBox";
 import ButtonRamdon from "./components/ButtonRamdon";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App" style={{ backgroundColor: color[countColor] }}>
       <article style={{ color: color[countColor] }}>
-        <Card
+        <QuoteBox
           title={users[count].name.title}
           name={users[count].name.first}
           firts={users[count].name.last}
