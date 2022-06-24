@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import users from "./users.json";
+import users from "./quotes.json";
 import Card from "./components/Card";
 import ButtonRamdon from "./components/ButtonRamdon";
 
