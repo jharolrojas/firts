@@ -5,7 +5,8 @@ import Card from "./components/Card";
 import ButtonRamdon from "./components/ButtonRamdon";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const numberRandom =Math.floor(Math.random() * users.length);
+  const [count, setCount] = useState(numberRandom);
   let min = 0;
   let max = users.length;
   function random() {
