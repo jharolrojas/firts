@@ -8,7 +8,7 @@
 article {
   background-color: antiquewhite;
   width: 350px;
-  height: 400px;
+  height: 420px;
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
@@ -23,6 +23,7 @@ button {
   height: 50px;
   border-radius: 100%;
   border: none;
+ 
 }
 img {
   border-radius: 100%;
@@ -37,3 +38,7 @@ img {
 h1 {
   text-align: center;
 }
+.containerInformation{
+  min-height: 130px;
+}
+

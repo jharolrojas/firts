@@ -5,15 +5,6 @@ import Card from "./components/Card";
 import ButtonRamdon from "./components/ButtonRamdon";
 
 function App() {
-  const numberRandom =Math.floor(Math.random() * users.length);
-  const [count, setCount] = useState(numberRandom);
-  let min = 0;
-  let max = users.length;
-  function random() {
-    setCount(Math.floor(Math.random() * (max - min) + min));
-  }
-//utilice el mismo contador para el array de colores 
-//ya que el json es pequeño y no era tanto trabajo poner un color por usuario
   const color = [
     "#D7BDE2 ",
     "#AED6F1",
@@ -26,10 +17,21 @@ function App() {
     "#1D8348",
     "#0E6655",
   ];
+  const numberRandom = Math.floor(Math.random() * users.length);
+  const [count, setCount] = useState(numberRandom);
+  const [countColor, setCountColor] = useState(numberRandom);
+
+  function random() {
+    setCount(Math.floor(Math.random() * users.length));
+    randomColor();
+  }
+  function randomColor() {
+    setCountColor(Math.floor(Math.random() * color.length));
+  }
 
   return (
-    <div className="App" style={{ backgroundColor: color[count] }}>
-      <article style={{ color: color[count] }}>
+    <div className="App" style={{ backgroundColor: color[countColor] }}>
+      <article style={{ color: color[countColor] }}>
         <Card
           title={users[count].name.title}
           name={users[count].name.first}
@@ -46,7 +48,7 @@ function App() {
           color={color[count]}
           img={users[count].picture.large}
         />
-        <ButtonRamdon color={color[count]} random={random} />
+        <ButtonRamdon color={color[countColor]} random={random} />
       </article>
     </div>
   );
