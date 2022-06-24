@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import users from "./quotes.json";
+import cite from "./quotes.json";
 import QuoteBox from "./components/QuoteBox";
 import ButtonRamdon from "./components/ButtonRamdon";
 
@@ -17,12 +17,13 @@ function App() {
     "#1D8348",
     "#0E6655",
   ];
-  const numberRandom = Math.floor(Math.random() * users.length);
-  const [count, setCount] = useState(numberRandom);
-  const [countColor, setCountColor] = useState(numberRandom);
+  const numberRandomCite = Math.floor(Math.random() * cite.length);
+  const numberRandomColor = Math.floor(Math.random() * color.length);
+  const [count, setCount] = useState(numberRandomCite);
+  const [countColor, setCountColor] = useState(numberRandomColor);
 
-  function random() {
-    setCount(Math.floor(Math.random() * users.length));
+  function randomCite() {
+    setCount(Math.floor(Math.random() * cite.length));
     randomColor();
   }
   function randomColor() {
@@ -32,23 +33,16 @@ function App() {
   return (
     <div className="App" style={{ backgroundColor: color[countColor] }}>
       <article style={{ color: color[countColor] }}>
-        <QuoteBox
-          title={users[count].name.title}
-          name={users[count].name.first}
-          firts={users[count].name.last}
-          direction={
-            users[count].location.country +
-            " " +
-            users[count].location.city +
-            " " +
-            users[count].location.state
-          }
-          phone={users[count].cell}
-          email={users[count].email}
-          color={color[count]}
-          img={users[count].picture.large}
-        />
-        <ButtonRamdon color={color[countColor]} random={random} />
+        <div className="cite">
+          <QuoteBox cite={cite[count].quote} />
+        </div>
+        <div className="buttonAndAuthor">
+          <ButtonRamdon
+            color={color[countColor]}
+            random={randomCite}
+            name={cite[count].author}
+          />
+        </div>
       </article>
     </div>
   );

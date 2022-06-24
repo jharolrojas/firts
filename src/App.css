@@ -3,15 +3,16 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 article {
   background-color: antiquewhite;
-  width: 350px;
-  height: 420px;
+  width: 600px;
+  height: 150px;
   border-radius: 10px;
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
   display: flex;
   box-shadow: 5px 5px 10px grey;
 
@@ -23,22 +24,20 @@ button {
   height: 50px;
   border-radius: 100%;
   border: none;
+  margin-right:30px ;
  
 }
-img {
-  border-radius: 100%;
+.buttonAndAuthor{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
-.contenidoArticle {
-  text-align: start;
-  max-width: 250px;
+.cite{
+  display: flex;
+  width: 100%;
+  height: 80px;
 }
-.containerImg {
-  text-align: center;
+p{
+  margin: 0;
 }
-h1 {
-  text-align: center;
-}
-.containerInformation{
-  min-height: 130px;
-}
-
